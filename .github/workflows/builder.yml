@@ -74,8 +74,8 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
-      - run: pnpm ci
-      - run: pnpm run build
+      - run: npm ci
+      - run: npm run build
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
