@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
     paths:
-      - '**/pake.yml'
+      - '**/builder.yml'
   # workflow_dispatch:
   #   inputs:
   #     name:
