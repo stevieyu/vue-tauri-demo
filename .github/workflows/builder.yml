@@ -70,13 +70,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
-      - run: npm ci
-      - run: npm run build
-
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -131,7 +124,8 @@ jobs:
       - name: Build for Windows
         if: matrix.os == 'windows-latest'
         run: |
-          pnpm tauri build
+          npm i && npm run build
+          npm tauri build
 
 
       # - uses: actions/upload-artifact@v4
