@@ -140,11 +140,11 @@ jobs:
           pnpm run tauri build
 
 
-      # - uses: actions/upload-artifact@v4
-      #   name: Upload the artifact
-      #   with:
-      #     name: Weekly.msi
-      #     path: Weekly.msi
+      - uses: actions/upload-artifact@v4
+        name: Upload the artifact
+        with:
+          name: vue-tauri-demo.msi
+          path: src-tauri\target\release\bundle\msi\vue-tauri-demo_0.1.0_x64_en-US.msi
 
           
       # - name: Restore Cargo Lock File(Windows Only)
