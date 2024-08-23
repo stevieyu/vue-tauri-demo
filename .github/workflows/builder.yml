@@ -80,7 +80,7 @@ jobs:
         name: Install pnpm
         with:
           version: 9
-          run_install: true
+          run_install: false
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -136,6 +136,7 @@ jobs:
       - name: Build for Windows
         if: matrix.os == 'windows-latest'
         run: |
+          pnpm i
           pnpm run tauri -- build
 
 
