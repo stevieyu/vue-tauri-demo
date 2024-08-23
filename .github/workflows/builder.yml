@@ -3,8 +3,10 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      - '**/builder.yml'
+    # paths:
+    #   - '**/builder.yml'
+
+
   # workflow_dispatch:
   #   inputs:
   #     name:
