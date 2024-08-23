@@ -2,12 +2,17 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Greet from "./components/Greet.vue";
+import {ref} from "vue";
+
+const ipgeo = ref('')
+
+fetch('http://ip-api.com/line?lang=zh-CN').then(r=>r.text()).then(r=>ipgeo.value=r)
 </script>
 
 <template>
   <div class="container">
     <h1>Welcome to Tauri!</h1>
-
+    {{ipgeo || 'loading ip geo'}}
     <div class="row">
       <a href="https://vitejs.dev" target="_blank">
         <img src="/vite.svg" class="logo vite" alt="Vite logo" />
