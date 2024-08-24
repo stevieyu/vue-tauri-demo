@@ -40,12 +40,6 @@ jobs:
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
-
-      - name: Rust cache
-        uses: swatinem/rust-cache@v2
-        with:
-          workspaces: './src-tauri -> target'
-
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
@@ -61,6 +55,12 @@ jobs:
       - name: install frontend dependencies
         run: |
           pnpm i
+
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
 
       - uses: tauri-apps/tauri-action@v0
         env:
