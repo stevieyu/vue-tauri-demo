@@ -38,7 +38,7 @@ jobs:
           version: 1.1
 
       - name: install Rust stable
-        uses: dtolnay/rust-toolchain@nightly # stable | nightly
+        uses: dtolnay/rust-toolchain@stable # stable | nightly
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
