@@ -54,15 +54,14 @@ jobs:
           node-version: lts/*
           cache: 'pnpm'
 
-      - name: install frontend dependencies
-        run: |
-          pnpm i
-
-
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
           workspaces: './src-tauri -> target'
+
+      - name: install frontend dependencies
+        run: |
+          pnpm i
 
       - uses: tauri-apps/tauri-action@v0
         env:
